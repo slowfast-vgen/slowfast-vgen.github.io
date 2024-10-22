@@ -620,7 +620,7 @@ input:checked + .slider:before {
 
 @media screen and (max-width: 550px) {
     .subheader {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .author-text {
@@ -628,7 +628,7 @@ input:checked + .slider:before {
     }
 
     .author-row {
-        height: 35px;
+        height: 45px;
     }
 
     #uc-berkeley {
