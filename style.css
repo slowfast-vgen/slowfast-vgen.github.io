@@ -190,8 +190,16 @@ p.ex1 {
 }
 
 #pipeline-img {
-    width: 60%;
+    width: 70%;
     max-width: 560px;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+#method-img {
+    width: 80%;
+    max-width: 700px;
     margin-top: 10px;
     margin-right: 20px;
     margin-bottom: 10px;
@@ -628,6 +636,13 @@ input:checked + .slider:before {
     }
 
     #pipeline-img {
+        width: 90%;
+        max-width: 560px;
+        margin-top: 20px;
+        margin-right: 0px;
+    }
+
+    #method-img {
         width: 90%;
         max-width: 560px;
         margin-top: 20px;
