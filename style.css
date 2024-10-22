@@ -631,6 +631,11 @@ input:checked + .slider:before {
         height: 35px;
     }
 
+    p.ex1 {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
     #uc-berkeley {
         font-size: 12px;
     }
