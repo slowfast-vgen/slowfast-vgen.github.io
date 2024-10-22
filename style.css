@@ -38,7 +38,7 @@ p.ex1 {
 
 .subheader {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 25px;
@@ -76,7 +76,7 @@ p.ex1 {
 }
 
 .author-row {
-    height: 25px;
+    height: 15px;
 }
 
 .author-col {
