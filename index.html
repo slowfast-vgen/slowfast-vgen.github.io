@@ -1,0 +1,289 @@
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYQNRK8LHK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FYQNRK8LHK');
+    </script>
+
+    <meta charset="utf-8" />
+    <title>SlowFastVGen: Slow-Fast Learning for Action-Driven Long Video Generation</title>
+
+    <meta content=""
+        name="description" />
+    <meta content="" property="og:title" />
+    <meta content=""
+        property="og:description" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script
+        type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic", "Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Changa One:400,400italic", "Varela Round:400", "Bungee Shade:regular", "Roboto:300,regular,500", "Bungee Outline:regular"] } });</script>
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+<body>
+<div class="section">
+<div class="container">
+    <div class="title-row">
+        <h1 class="title">SlowFast-VGen</h1>
+        <h1 class="subheader"> Slow-Fast Learning for Action-Conditioned Long Video Generation</h1>
+    </div>
+
+    <div class="base-row author-row">
+        <div class="base-col author-col">
+            <a href="https://evelinehong.github.io" target="_blank" class="author-text">
+            Yining Hong<sup>1</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="" target="_blank" class="author-text">
+            Beide Liu<sup>1</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="" target="_blank" class="author-text">
+            Maxine Wu<sup>1</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="https://www.yhzhai.com" target="_blank" class="author-text">
+            Yuanhao Zhai<sup>3</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="http://web.cs.ucla.edu/~kwchang/" target="_blank" class="author-text">
+            Kai-Wei Chang<sup>1</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="https://www.microsoft.com/en-us/research/people/linjli/" target="_blank" class="author-text">
+            Lingjie Li<sup>2</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="https://sites.google.com/site/kevinlin311tw/me" target="_blank" class="author-text">
+            Kevin Lin<sup>2</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="https://www.microsoft.com/en-us/research/people/chunglin/" target="_blank" class="author-text">
+            Chung-Ching Lin<sup>2</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="https://jianfengwang.me" target="_blank" class="author-text">
+            Jianfeng Wang<sup>2</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="https://zyang-ur.github.io" target="_blank" class="author-text">
+            Zhengyuan Yang<sup>2,⧺</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="http://www.stat.ucla.edu/~ywu/" target="_blank" class="author-text">
+            Yingnian Wu<sup>1,⧺</sup>
+            </a>
+        </div>
+        <div class="base-col author-col">
+            <a href="https://www.microsoft.com/en-us/research/people/lijuanw/" target="_blank" class="author-text">
+            Lijuan Wang<sup>2,⧺</sup>
+            </a>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="">
+        <p class="ex1">
+        <span><sup>1</sup> UCLA</span>  &nbsp &nbsp &nbsp 
+        <span><sup>2</sup> Microsoft Research</span> &nbsp &nbsp &nbsp
+        <span><sup>3</sup> State University of New York at Buffalo</span> &nbsp &nbsp &nbsp
+            <br> 
+            <span><sup>⧺</sup> Equal Advising</span> 
+        </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <div class="link-labels base-row" style="display: flex; flex-direction: column; align-items: center;">
+            <!-- TODO: Update arxiv link -->
+            <div class="base-col icon-col">
+                <a href="" target="_blank" class="link-block">
+                    <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png"
+                         alt="paper"
+                         sizes="(max-width: 479px) 12vw, (max-width: 767px) 7vw, (max-width: 991px) 41.8515625px, 56.6953125px"
+                         srcset="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01-p-500.png 500w, https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png 672w"
+                         class="icon-img" />
+                </a>
+            </div>
+            <div class="base-col icon-col" style="margin-top: 20px;">
+                <strong class="link-labels-text">Paper</strong>
+            </div>
+        </div>
+    </div>
+
+    <image id="main-image" autobuffer muted autoplay loop controls>
+        <img src="data/teaser_v9.pdf" alt="pipeline" style="height: 30em; margin-top:2em" />
+    </image>
+
+    <div class="flex-row">
+        <h1 id="abstract">Overview</h1>
+                <p class="paragraph" style="text-align:/right;">
+                    We propose SlowFast-VGen, a dual-speed action-driven video generation system that
+mimics the complementary learning system in human brains. The slow learning phase (a), mimicking the neocortex, learns an
+approximate world model that simulates general dynamics across a diverse set of scenarios. The fast
+learning phase (b), similar to the hippocampus, stores episodic memory for consistent long video generation, e.g., generating the
+same scene for “Loc1” after traveling across different locations. Slow-fast learning also facilitates
+long-horizon planning tasks (c) that require the efficient storage of long-term episodic memories.
+                </p>
+    </div>
+    <video id="main-video" autoplay muted playsinline loop autobuffer>
+        <source src="data/compressed/compressed_main_video.mp4" type="video/mp4">
+    </video>
+
+    <br><br>
+    <h1>
+       Slow-Fast Learning Framework   
+    </h1>
+    <image id="main-image" autobuffer muted autoplay loop controls>
+        <img src="data/method_v11.pdf" alt="pipeline" style="height: 20em; margin-top:0em" />
+    </image>
+    <div class="flex-row">
+                <p class="paragraph" style="text-align:/right;">
+                The left side illustrates the slow learning process,
+pretraining on all data with a masked conditional video diffusion model. The right side depicts
+the fast learning process, where TEMP-LORA stores episodic memory during inference. Stream-
+in actions guide the generation of video chunks, with TEMP-LORA parameters updated after each
+chunk. In our slow-fast learning loop algorithm, the inner loop performs fast learning, supplying
+TEMP-LORA parameters from multiple episodes to the slow learning process, which updates slow
+learning parameters Φ based on frozen fast learning parameters.
+                </p>
+    </div>
+
+    <br><br>
+    <h1>
+        More Fast Learning Examples  
+     </h1>
+    <image id="main-image" autobuffer muted autoplay loop controls>
+        <img src="data/arrow.pdf" alt="pipeline" style="height: 2.5em; margin-top:2em" />
+    </image>
+    <video id="main-video" autoplay muted playsinline loop autobuffer>
+        <source src="data/compressed/compressed_fast1.mp4" type="video/mp4">
+    </video>
+    <video id="main-video" autoplay muted playsinline loop autobuffer>
+        <source src="data/compressed/compressed_fast2.mp4" type="video/mp4">
+    </video>
+
+    <br><br>
+    <h1>
+        More Slow Learning Examples  
+     </h1>
+    <video id="main-video" autoplay muted playsinline loop autobuffer>
+        <source src="data/compressed/compressed_slow1.mp4" type="video/mp4">
+    </video>
+
+    <br><br>
+    <h1>
+        Slow-Fast Learning Loop for Memory-Augmented Long-Horizon Planning 
+     </h1>
+     <image id="main-image" autobuffer muted autoplay loop controls>
+        <img src="data/planning.pdf" alt="pipeline" style="height: 20em; margin-top:0em" />
+    </image>
+
+    <br><br>
+    <h1>
+        Rethinking Slow-Fast Learning in Context of Complementary Learning Systems
+    </h1>
+
+
+    <h2 style="text-align: left;">Slow-Fast Learning Loop as a Computational Analogue to Hippocampus-Neocortex Interplay</h2>
+    <div style="text-align: left;">
+        <p class="paragraph">
+            In neuroscience, the neocortex is associated with slow learning, while the hippocampus facilitates
+            fast learning and memory formation, thus forming a complementary learning system where the
+            two learning mechanisms complement each other. While slow learning involves gradual knowledge
+            acquisition, fast learning enables rapid formation of new memories from single experiences for quick
+            adaptation to new situations through one-shot contextual learning. However, current pre-training
+            paradigms (e.g., LLMs or diffusion models) primarily emulate slow learning, akin to procedural
+            memory in cognitive science. In our setting, TEMP-LORA serves as an analogy to the hippocampus.
+        </p>
+    </div>
+    
+    <h2 style="text-align: left;">Temp-LoRA as Local Learning Rule</h2>
+<div style="text-align: left;">
+<p class="paragraph">
+It's long believed that fast learning is achieved by local learning rule. Specifically, given pairs of patterns \((x^\mu, y^\mu)\) to be stored in the matrix \(C\), the process of storage could be formulated by the following equation:
+
+<div style="text-align: center; margin: 20px 0;">
+\(c = \sum_\mu x^\mu y^\mu\)
+</div>
+
+Consider a sequential memory storage process where learning steps involve adding input-output pairs \((x^\mu, y^\mu)\) to memory, the change \(\Delta c_{ij}\) in each memory entry depends only on local input-output interactions:
+
+<div style="text-align: center; margin: 20px 0;">
+\(\Delta c(t) = x^\mu(t) \cdot y^\mu(t)\)
+</div>
+
+This local learning rule bears a striking resemblance to LoRA's update mechanism:
+
+<div style="text-align: center; margin: 20px 0;">
+\(W' = W + \Delta W = W_\text{slow} + W_\text{fast} = \Phi + \Theta\)
+</div>
+
+Where \(W_\text{fast}\) is achieved by the matrix change, updated based on the current-iteration input and output locally as in Equation \(\Delta W \leftarrow z_{0, i-1} \oplus z_{0,i}\).
+</p>
+</div>
+
+    <h2 style="text-align: left;">Slow-Fast Learning Loop as a Computational Analogue to Hippocampus-Neocortex Interplay</h2>
+    <div style="text-align: left;">
+        <p class="paragraph">
+            The relationship between Temp-LoRA and slow learning weights mirrors the interplay between hippocampus and neocortex in complementary learning systems. This involves rapid encoding of new experiences by the hippocampus, followed by gradual integration into neocortical networks. As in memory consolidation, which is the process where hippocampal memories are abstracted and integrated into neocortical structures, forming general knowledge via offline phases, particularly during sleep. This bidirectional interaction allows for both quick adaptation and long-term retention. Our slow-fast learning loop emulates this process, where \( W' = W + \Delta W = W_{\text{slow}} + W_{\text{fast}} \). Here, \( W_{\text{fast}} \) (Temp-LoRA) rapidly adapts to new experiences, analogous to hippocampal encoding, while \( W_{\text{slow}} \) gradually incorporates this information, mirroring neocortical consolidation.
+        </p>
+    </div>
+
+    <div class="citation add-top-padding">
+        <h1 id="abstract"> Citation </h1>
+        <p> If you use this work or find it helpful, please consider citing: (bibtex) </p>
+        <pre id="codecell0">@article{slowfastvgen,
+            &nbsp;author = {Hong, Yining and Liu, Beide and Wu, Maxine and Zhai, Yuanhao and Chang, Kai-Wei and Li, Lingjie and Lin, Kevin and Lin, Chung-Ching and Wang, Jianfeng and Yang, Zhengyuan and Wu, Yingnian and Wang, Lijuan},
+            &nbsp;title = {SlowFast-VGen: Slow-Fast Learning for Action-Conditioned Long Video Generation},
+            &nbsp;journal = {arXiv},
+            &nbsp;year = {2024},
+            } </pre>
+    </div>
+
+</div>
+</div>
+
+
+
+
+    
+
+                    
+
+</div>
+</div>
+
+</body>
